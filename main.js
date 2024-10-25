@@ -22,3 +22,14 @@ function updateTotalPrice() {
     
     totalPriceElement.textContent = totalPrice.toFixed(2);
 } //connecting the event listeners above, updates price in real time based on quantity and product selected
+
+
+//task 4: handle order submission
+
+placeOrderButton.addEventListener('click', function() {
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text;
+    const quantity = quantityInput.value;
+    const totalPrice = totalPriceElement.textContent;
+    
+    orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct}. Total price: $${totalPrice}`;
+}); //when clicked, displays an order summary at the bottom with product, quantity, and price
